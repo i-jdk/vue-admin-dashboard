@@ -45,17 +45,17 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
-  const currentUser = netlifyIdentityWidget.currentUser();
-  const requiresAuth = to.matched.some(record => {
-    return record.meta.requiresAuth
-  })
+// router.beforeEach((to, from, next) => {
+//   const currentUser = netlifyIdentityWidget.currentUser();
+//   const requiresAuth = to.matched.some(record => {
+//     return record.meta.requiresAuth
+//   })
 
-  if(requiresAuth && !currentUser) {
-    next("signin");
-  } else{
-    next();
-  }
-})
+//   if(requiresAuth && !currentUser) {
+//     next("signin");
+//   } else{
+//     next();
+//   }
+// })
 
 export default router;
